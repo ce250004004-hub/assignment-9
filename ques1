@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+struct Item{
+  int id;
+  float cost;
+};
+bool idExist(Item items[], int count,int newId){
+  for (int i=0;i<count;i++){
+    if (items[i].id==newId){
+      return true;
+    }
+  }
+  return false;
+}
+int main(){
+  Item items[6]{
+    {15,150.90},
+    {16,100.00},
+    {17,90.10},
+    {18,40.20}
+  };
+  for (int i=4 ;i<6;i++ ){
+    int newId;
+    cout<<"Enter id code of the number "<<(i+1)<<" element : ";
+    cin>>newId;
+    while (idExist(items,i,newId)){
+      cout<<"Id already exist! Enter a new Id ";
+      cin>>newId;
+    }
+    items[i].id=newId;
+    cout << "Enter cost for item " << (i + 1) << ": ";
+    cin >> items[i].cost;
+  }
+  cout << "\nItems with cost greater than 50:\n";
+
+    for (int i = 0; i < 6; i++) {
+        if (items[i].cost > 50.00) {
+            cout << "Item ID: " << items[i].id 
+                 << ", Cost: " << items[i].cost << endl;
+        }
+    }
+
+    return 0;
+}
+
