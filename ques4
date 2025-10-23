@@ -18,13 +18,13 @@ int main() {
         cin >> arr[i].amount;
         arr[i].month = months[i];
 
-        // Check for maximum
+        
         if (arr[i].amount > maxSales) {
             maxSales = arr[i].amount;
             maxMonth = arr[i].month;
         }
 
-        // Check for minimum
+        
         if (arr[i].amount < minSales) {
             minSales = arr[i].amount;
             minMonth = arr[i].month;
